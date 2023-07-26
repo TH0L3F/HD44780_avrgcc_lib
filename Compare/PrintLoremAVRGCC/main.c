@@ -1,4 +1,4 @@
-#include"lcd_hd44780.h"
+#include"../../src/lcd_hd44780.h"
 
 char lorem[80] = "Lorem ipsum dolor\nsit amet,consectetur\nadipiscing elit, sed\n do eiusmod tempor\n";
 

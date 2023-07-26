@@ -11,10 +11,10 @@ PROGRAMMER_PARAMS = -c $(PROGRAMMER) -p $(MCU) -b $(BAUD_RATE) -P $(PORT)
 CFLAGS = -mmcu=$(MCU) -DF_CPU=$(F_CPU)
 
 # Fichiers source
-SRC = main.c lcd_hd44780.c
+SRC = main.c ../../src/lcd_hd44780.c
 
 # Nom de l'exécutable
-TARGET = lcd_uart_program
+TARGET = lcd_lorem_program
 
 all: $(TARGET).hex
 
@@ -26,7 +26,7 @@ $(TARGET).elf: $(SRC)
 
 upload: $(TARGET).hex
 	#Commande pour oldbootloader
-	avrdude -c arduino -p m328p -P /dev/ttyUSB0 -b 57600 -U flash:w:lcd_uart_program.hex:i
+	avrdude -c arduino -p m328p -P /dev/ttyUSB0 -b 57600 -U flash:w:lcd_lorem_program.hex:i
 	
 	#Commande pour new bootloader
 	#avrdude -c avrisp -p m328p -P /dev/ttyUSB0 -U flash:w:lcd_uart_program.hex:i
